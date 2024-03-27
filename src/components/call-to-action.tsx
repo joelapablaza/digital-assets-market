@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button, buttonVariants } from './ui/button';
-import Image from 'next/image';
+import { Search } from 'lucide-react';
 const categories = [
   'Ilustraciones',
   'Tipografias',
@@ -20,7 +20,7 @@ const CallToAction = () => {
       </div>
       <div className=" mt-10 relative flex items-center bg-gray-100 border border-gray-200 rounded-lg pl-12 py-3 w-[60%]">
         <span className="absolute left-4 text-primary dark:text-secondary">
-          B
+          <Search />
         </span>
         <input
           type="text"
