@@ -4,6 +4,8 @@ import '@/app/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import NavBar from '@/components/nav';
+import Providers from '@/components/providers';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,9 +31,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="relative flex flex-col min-h-screen">
-            <NavBar />
-            <div className="flex-grow flex-1">{children}</div>
+            <Providers>
+              <NavBar />
+              <div className="flex-grow flex-1">{children}</div>
+            </Providers>
           </main>
+          <Toaster position="top-center" richColors />
         </ThemeProvider>
       </body>
     </html>
