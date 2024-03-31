@@ -37,12 +37,12 @@ const NavItem = ({ category, handleOpen, isAnyOpen, isOpen }: NavItemProps) => {
       {isOpen && (
         <div
           className={cn(
-            'absolute inset-x-0 top-full text-sm text-muted-foreground',
+            'absolute inset-x-0 py-10 top-full text-sm text-muted-foreground',
             { 'animate-in fadein-10 slide-in-from-top-5': !isOpen }
           )}
         >
           <div
-            className="absolute inset-0 top-1/2 bg-background shadow"
+            className="absolute inset-0 top-1/2 bg-background shadow dark:shadow-gray-500"
             aria-hidden
           />
           <div className="relative bg-background">

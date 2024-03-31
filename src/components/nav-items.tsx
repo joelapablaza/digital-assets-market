@@ -30,6 +30,7 @@ const NavItems = () => {
 
   return (
     <div className="flex gap-4 h-full items-center" ref={navRef}>
+      <span className="h-6 w-px bg-gray-200" aria-hidden />
       {PRODUCT_CATEGORIES.map((c, i) => {
         const handleOpen = () => {
           if (activeIndes === i) {

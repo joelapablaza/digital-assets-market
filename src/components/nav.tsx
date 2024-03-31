@@ -16,20 +16,13 @@ const NavBar = async () => {
   return (
     <div className="bg-background sticky z-50 top-0 inset-x-0 h-16">
       <header className="relative bg-background">
-        {/* <MaxWithWrapper> */}
         <div className="border-b border-gray-200">
           <div className="flex h-16 items-center">
             {/* mobile here */}
 
             <div className="ml-4 flex lg:ml-8">
               <Link href="/">
-                <Image
-                  src="/logo.png"
-                  height={46}
-                  width={40}
-                  alt="logo"
-                  className="h-10 w-10"
-                />
+                <h1 className="text-xl">CAPI</h1>
               </Link>
             </div>
             <div className="mr-auto ml-5 hidden z-50 lg:block lg:self-stretch">
@@ -73,7 +66,6 @@ const NavBar = async () => {
             </div>
           </div>
         </div>
-        {/* </MaxWithWrapper> */}
       </header>
     </div>
   );
