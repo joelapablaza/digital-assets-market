@@ -27,6 +27,12 @@ export const Media: CollectionConfig = {
   },
   access: {
     read: async ({ req }) => {
+      const referer = req.headers.referer;
+
+      if (!req.user || !referer?.includes('sell')) {
+        return true;
+      }
+
       return await isAdminOrHasAccessToImages()({ req });
     },
     delete: isAdminOrHasAccessToImages(),
@@ -36,32 +42,32 @@ export const Media: CollectionConfig = {
     hidden: ({ user }) => user.role !== 'admin',
   },
   // para cloudinary
-  // upload: true,
-  upload: {
-    staticURL: '/media',
-    staticDir: 'media',
-    imageSizes: [
-      {
-        name: 'thumbnail',
-        width: 400,
-        height: 300,
-        position: 'centre',
-      },
-      {
-        name: 'card',
-        width: 768,
-        height: 1024,
-        position: 'centre',
-      },
-      {
-        name: 'tablet',
-        width: 1024,
-        height: undefined,
-        position: 'centre',
-      },
-    ],
-    mimeTypes: ['image/*'],
-  },
+  upload: true,
+  // upload: {
+  //   staticURL: '/media',
+  //   staticDir: 'media',
+  //   imageSizes: [
+  //     {
+  //       name: 'thumbnail',
+  //       width: 400,
+  //       height: 300,
+  //       position: 'centre',
+  //     },
+  //     {
+  //       name: 'card',
+  //       width: 768,
+  //       height: 1024,
+  //       position: 'centre',
+  //     },
+  //     {
+  //       name: 'tablet',
+  //       width: 1024,
+  //       height: undefined,
+  //       position: 'centre',
+  //     },
+  //   ],
+  //   mimeTypes: ['image/*'],
+  // },
   fields: [
     {
       name: 'user',
