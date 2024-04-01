@@ -1,6 +1,6 @@
 {
   "name": "capi-market",
-  "version": "0.57.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/backend/payload.config.ts nodemon",
