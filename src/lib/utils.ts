@@ -63,7 +63,7 @@ export function constructMetadata({
       creator: '@joelapablaza',
     },
     icons,
-    metadataBase: new URL('https://demo.com.ar'),
+    metadataBase: new URL('https://digital-assets-market.onrender.com'),
     ...(noIndex && {
       robots: {
         index: false,
