@@ -19,6 +19,7 @@ const BecomeSeller = () => {
       </div>
       <div className="hidden md:flex ">
         <Image
+          priority
           src="/become-seller.jpg"
           alt="conviertete en vendedor"
           width={640}
