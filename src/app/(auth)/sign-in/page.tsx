@@ -19,8 +19,6 @@ import {
 import { trpc } from '@/trpc/client';
 
 const Page = () => {
-  const [show, setShow] = useState(false);
-
   const searchParams = useSearchParams();
   const router = useRouter();
   const isSeller = searchParams.get('as') === 'seller';
@@ -124,25 +122,12 @@ const Page = () => {
                   <Label htmlFor="password">Contraseña</Label>
                   <Input
                     {...register('password')}
-                    type={!show ? 'password' : 'text'}
+                    type="password"
                     className={cn({
                       'focus-visible:ring-red-500': errors.password,
                     })}
                     placeholder="Contraseña"
                   />
-                  {!show ? (
-                    <EyeOff
-                      className="absolute bottom-5 right-2 z-1 cursor-pointer"
-                      size={20}
-                      onClick={() => setShow(true)}
-                    />
-                  ) : (
-                    <Eye
-                      className="absolute bottom-5 right-2 z-1 cursor-pointer"
-                      size={20}
-                      onClick={() => setShow(false)}
-                    />
-                  )}
                   {errors?.password && (
                     <p className="text-sm text-red-500">
                       {errors.password.message}
