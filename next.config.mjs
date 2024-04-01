@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'localhost',
       },
       {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
         protocol: 'http',
         hostname: 'digital-capi.joelapablaza.com.ar',
       },

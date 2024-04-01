@@ -17,6 +17,7 @@
 /build
 /src/backend/media
 /src/backend/product_files
+/dist
 
 # misc
 .DS_Store
