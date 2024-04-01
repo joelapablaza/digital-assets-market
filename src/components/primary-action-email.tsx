@@ -5,11 +5,11 @@ import {
   Head,
   Hr,
   Html,
-  Img,
   Preview,
   Section,
   Text,
   render,
+  Link,
 } from '@react-email/components';
 
 import * as React from 'react';
@@ -31,16 +31,9 @@ export const EmailTemplate = ({
       <Preview>El mercado para bienes digitales de alta calidad.</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Img
-            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`}
-            width="150"
-            height="150"
-            alt="DigitalCapi"
-            style={logo}
-          />
           <Text style={paragraph}>Hola!,</Text>
           <Text style={paragraph}>
-            Bienvenido a DigitalCapi, el mercado de bienes digitales de alta
+            Bienvenido a Capi Market, el mercado de bienes digitales de alta
             calidad. Utiliza el botón a continuación para {actionLabel}.
           </Text>
           <Section style={btnContainer}>
@@ -49,9 +42,13 @@ export const EmailTemplate = ({
             </Button>
           </Section>
           <Text style={paragraph}>
+            Si no puedes usar el boton, utiliza el siguiente link
+          </Text>
+          <Link href={href}>{href}</Link>
+          <Text style={paragraph}>
             Atentamente,
             <br />
-            el equipo de DigitalCapi.
+            el equipo de Capi Market.
           </Text>
           <Hr style={hr} />
           <Text style={footer}>
