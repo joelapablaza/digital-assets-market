@@ -1,11 +1,6 @@
 'use client';
 
-import { formatPrice } from '@/lib/utils';
-import { ShoppingCartIcon } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { buttonVariants } from './ui/button';
-import { Separator } from './ui/separator';
+import { ShoppingCart } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -13,44 +8,73 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from './ui/sheet';
-
-const itemCount = 0;
-const fee = 1;
+} from '@/components/ui/sheet';
+import { Separator } from '@/components/ui/separator';
+import { formatPrice } from '@/lib/utils';
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
+import Image from 'next/image';
+import { useCart } from '@/hooks/use-cart';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import CartItem from '@/components/cart-item';
+import { useEffect, useState } from 'react';
 
 const Cart = () => {
+  const { items } = useCart();
+
+  const itemCount = items.length;
+
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const cartTotal = items.reduce(
+    (total, { product }) => total + product.price,
+    0
+  );
+
+  const fee = 500;
+
   return (
     <Sheet>
-      <SheetTrigger className="group flex items-center p-2">
-        <ShoppingCartIcon
-          aria-hidden
-          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-200"
+      <SheetTrigger className="group -m-2 flex items-center p-2">
+        <ShoppingCart
+          aria-hidden="true"
+          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-100"
         />
-        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
-          0
+        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
+          {isMounted ? itemCount : 0}
         </span>
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="space-y-2.5 pr-6">
-          <SheetTitle>Cart (0)</SheetTitle>
+          <SheetTitle>Cart ({itemCount})</SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
-            <div className="flex w-full flex-col pr-6">cart items</div>
+            <div className="flex w-full flex-col pr-6">
+              <ScrollArea>
+                {items.map(({ product }) => (
+                  <CartItem product={product} key={product.id} />
+                ))}
+              </ScrollArea>
+            </div>
             <div className="space-y-4 pr-6">
               <Separator />
               <div className="space-y-1.5 text-sm">
                 <div className="flex">
                   <span className="flex-1">Envio</span>
-                  <span className="">Free</span>
+                  <span>Gratuito</span>
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Tarifa de transacción</span>
-                  <span className="">{formatPrice(fee)}</span>
+                  <span className="flex-1">Tarifa de transacción (10%)</span>
+                  <span>{formatPrice(fee)}</span>
                 </div>
                 <div className="flex">
                   <span className="flex-1">Total</span>
-                  <span className="">{formatPrice(fee)}</span>
+                  <span>{formatPrice(cartTotal + fee)}</span>
                 </div>
               </div>
 
@@ -58,9 +82,11 @@ const Cart = () => {
                 <SheetTrigger asChild>
                   <Link
                     href="/cart"
-                    className={buttonVariants({ className: 'w-full' })}
+                    className={buttonVariants({
+                      className: 'w-full',
+                    })}
                   >
-                    Ir al carrito
+                    Continuar con la compra
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
@@ -68,12 +94,14 @@ const Cart = () => {
           </>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
-            <div className="relative mb-4 h-60 w-60 text-muted-foreground">
+            <div
+              aria-hidden="true"
+              className="relative mb-4 h-60 w-60 text-muted-foreground"
+            >
               <Image
                 src="/capi-empty-cart.png"
-                alt="carrito vacio"
                 fill
-                aria-hidden
+                alt="empty shopping cart hippo"
               />
             </div>
             <div className="text-xl font-semibold">Tu carrito está vacío</div>
