@@ -1,10 +1,12 @@
 # Capi Market - Digital Assets
 
-### Preview <a href="https://digital-assets-market.onrender.com/" style="color:#1bb8e3;">visitar la página</a>
+## There is also a Spanish Readme
+
+### <a href="https://digital-assets-market.onrender.com/" style="color:#1bb8e3;">Visit the page</a>
 
 ![Preview](/public/preview.png)
 
-## Este proyecto tiene como fin probar tecnologias como TRPC, Zustand PayloadCMS, etc
+## This project aims to test technologies such as TRPC, Zustand, PayloadCMS, etc
 
 - Next 14
 - TRPC
@@ -18,25 +20,17 @@
 - Hookform
 - PayloadCMS
 
-## Self-Hosted Express
+## Self-Hosted Next.js with Express
 
-Decidi probar como hacer self-hosting de express, de esta manera poder hostear el proyecto donde
-mejor me quede, y esto tambien da opciones para utilizar websockets sin pagar el premium de Vercel.
+I decided to try how to do self-hosting of express, in this way to be able to host the project wherever suits me best, and this also gives options to use websockets without paying the Vercel premium.
 
-## Para este proyecto he decidido probar PayloadCMS y estas son mis conclusiones:
+## For this project I have decided to try PayloadCMS and these are my conclusions:
 
-**Pros**: **Payload CMS** ofrece un sistema robusto enfocado a typescript, lo cual lo hace
-más seguro a la hora de desarrollar.
+**Pros**: **Payload CMS** offers a robust system focused on typescript, which makes it more secure when developing.
 
-**Cons**: **Payload CMS** es relativamente nuevo y no existe soporte oficial para Cloudinaty por ejemplo.
-Aunque su desarrollo sigue mejorando, la metodologia es similar a `Next.js`, aunque este no ofrece las
-alternativas de configuracion personalizada que ofrece `Next.js` en el caso de necesitarlas, es muy opinionado y
-me encontre que es mucho mas limitado que otros CMSs como Strapi. La configuracion puede ser algo
-tediosa ya que aunque parezca que tienes mucha libertad de customizacion en realidad no la tienes.
+**Cons**: **Payload CMS** is relatively new and there is no official support for Cloudinary for example. Although its development continues to improve, the methodology is similar to `Next.js`, although it does not offer the customized configuration alternatives that `Next.js` offers in case you need them, it is very opinionated and I found that it is much more limited than other CMSs like Strapi. The configuration can be a bit tedious since although it seems that you have a lot of customization freedom, in reality you don't.
 
-**Conclucion**: Creo que tiene mucho potencial si se va a utilizar en el servicio de hosting de Payload el cual
-viene con un gran premium en el precio. Pero para utilizar de forma personal o para desplegar en servidores propios
-recomiendo utilizar algunas de las alternativas mas maduras del mercado.
+**Conclucion**: I believe it has a lot of potential if it is going to be used in the Payload hosting service which comes with a large premium in the price. But to use it personally or to deploy on your own servers, I recommend using some of the more mature alternatives on the market.
 
 ## Features
 
@@ -59,6 +53,9 @@ Clone the Repo:
 
 ```bash
 git clone https://github.com/joelapablaza/digital-assets-market.git
+
+# copy .env.example into .env
+cp .env.example .env
 ```
 
 Run the development server:
