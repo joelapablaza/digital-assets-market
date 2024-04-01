@@ -1,6 +1,6 @@
 {
   "name": "capi-market",
-  "version": "0.62.5",
+  "version": "0.62.6",
   "private": true,
   "main": "dist/backend/server.js",
   "scripts": {
