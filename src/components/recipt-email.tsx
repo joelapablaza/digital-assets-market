@@ -39,7 +39,7 @@ export const ReceiptEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Tu recibo de DigitalCapi</Preview>
+      <Preview>Tu recibo de Capi Market</Preview>
 
       <Body style={main}>
         <Container style={container}>
@@ -49,7 +49,7 @@ export const ReceiptEmail = ({
                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}/capi-email-sent.png`}
                 width="100"
                 height="100"
-                alt="DigitalCapi"
+                alt="capi market"
               />
             </Column>
 
@@ -118,7 +118,7 @@ export const ReceiptEmail = ({
                     </Text>
                   ) : null}
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`}
+                    href={`${process.env.NEXT_PUBLIC_SERVER_URL}/gracias?orderId=${orderId}`}
                     style={productLink}
                   >
                     Descargar Recurso
@@ -144,7 +144,7 @@ export const ReceiptEmail = ({
             </Column>
 
             <Column style={productPriceWrapper} align="right">
-              <Text style={productPrice}>{formatPrice(1)}</Text>
+              <Text style={productPrice}>{formatPrice(500)}</Text>
             </Column>
           </Section>
 
@@ -161,12 +161,12 @@ export const ReceiptEmail = ({
           <Hr style={productPriceLineBottom} />
 
           <Text style={footerLinksWrapper}>
-            <Link href="#">Account Settings</Link> •{' '}
-            <Link href="#">Terms of Sale</Link> •{' '}
-            <Link href="#">Privacy Policy </Link>
+            <Link href="#">Configuración de la cuenta</Link> •{' '}
+            <Link href="#">Términos de venta</Link> •{' '}
+            <Link href="#">Política de privacidad</Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 DigitalCapi Inc. <br />{' '}
+            Copyright © 2023 Capi Market Inc. <br />{' '}
             <Link href="#">Todos los derechos reservados</Link>
           </Text>
         </Container>
