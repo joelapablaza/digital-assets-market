@@ -48,7 +48,7 @@ export interface Producto {
   id: string;
   user?: (string | null) | User;
   name: string;
-  description: string;
+  description?: string | null;
   price: number;
   category: 'ui_kits' | 'icons' | 'fonts' | 'mockups';
   archivos: string | Archivo;
@@ -69,6 +69,13 @@ export interface Producto {
 export interface Archivo {
   id: string;
   user?: (string | null) | User;
+  cloudinary?: {
+    public_id?: string | null;
+    original_filename?: string | null;
+    format?: string | null;
+    secure_url?: string | null;
+    resource_type?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -85,6 +92,13 @@ export interface Archivo {
 export interface Media {
   id: string;
   user?: (string | null) | User;
+  cloudinary?: {
+    public_id?: string | null;
+    original_filename?: string | null;
+    format?: string | null;
+    secure_url?: string | null;
+    resource_type?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -93,32 +107,6 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    tablet?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

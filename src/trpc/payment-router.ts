@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { privateProcedure, publicProcedure, router } from './trpc';
+import { privateProcedure, router } from './trpc';
 import { TRPCError } from '@trpc/server';
 import { getPayloadClient } from '../backend/get-payload';
 import { stripe } from '../lib/stripe';
@@ -48,7 +48,7 @@ export const paymentRouter = router({
       });
 
       line_items.push({
-        price: 'price_1OFNuzKnzaiuG9bvdk4QNUwG',
+        price: 'price_1P0bsXKnzaiuG9bvJd56yGxQ',
         quantity: 1,
         adjustable_quantity: {
           enabled: false,
@@ -57,7 +57,7 @@ export const paymentRouter = router({
 
       try {
         const stripeSession = await stripe.checkout.sessions.create({
-          success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
+          success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/gracias?orderId=${order.id}`,
           cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,
           payment_method_types: ['card'],
           mode: 'payment',
