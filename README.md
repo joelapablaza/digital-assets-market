@@ -26,9 +26,9 @@ I decided to try how to do self-hosting of express, in this way to be able to ho
 
 ## For this project I have decided to try PayloadCMS and these are my conclusions:
 
-**Pros**: **Payload CMS** offers a robust system focused on typescript, which makes it more secure when developing.
+**Pros**: **Payload CMS** offers a robust system focused on typescript, which makes it more secure when developing. Its backend system is comprehensive and robust, including various database drivers and integrated registration and login functionalities.
 
-**Cons**: **Payload CMS** is relatively new and there is no official support for Cloudinary for example. Although its development continues to improve, the methodology is similar to `Next.js`, although it does not offer the customized configuration alternatives that `Next.js` offers in case you need them, it is very opinionated and I found that it is much more limited than other CMSs like Strapi. The configuration can be a bit tedious since although it seems that you have a lot of customization freedom, in reality you don't.
+**Observations**: **Payload CMS** is constantly improving and developing, it is a relatively new solution compared to other more established alternatives in the market. Until recently, it lacked official integrations with cloud service providers such as AWS, Azure, or Google Cloud, and did not accept plugins for creating custom drivers, which could be a limitation in certain use cases. However, in the latest versions, official drivers for major cloud providers have been added. Although its development is improving, the methodology is similar to `Next.js`, although it does not offer the same level of customizable configuration options that `Next.js` does if needed. It is highly opinionated and I found it to be much more limited than other CMS solutions like Strapi. Configuration can be somewhat tedious as although it may seem like you have a lot of freedom for customization, in reality, you do not.
 
 **Conclucion**: I believe it has a lot of potential if it is going to be used in the Payload hosting service which comes with a large premium in the price. But to use it personally or to deploy on your own servers, I recommend using some of the more mature alternatives on the market.
 

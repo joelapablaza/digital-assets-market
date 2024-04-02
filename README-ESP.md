@@ -24,9 +24,9 @@ Decidí probar cómo hacer self-hosting de express, de esta manera poder hostear
 
 ## Para este proyecto he decidido probar PayloadCMS y estas son mis conclusiones:
 
-**Pros**: **Payload CMS** ofrece un sistema robusto enfocado a typescript, lo cual lo hace más seguro a la hora de desarrollar.
+**Pros**: **Payload CMS** ofrece un sistema robusto enfocado a typescript, lo cual lo hace más seguro a la hora de desarrollar. Y su sistema backend es muy completo y robusto, incluyendo desde algunos drivers para bases de datos hasta registro y login ya integrado.
 
-**Cons**: **Payload CMS** es relativamente nuevo y no existe soporte oficial para Cloudinary por ejemplo. Aunque su desarrollo sigue mejorando, la metodología es similar a `Next.js`, aunque este no ofrece las alternativas de configuración personalizada que ofrece `Next.js` en el caso de necesitarlas, es muy opinionado y me encontré que es mucho más limitado que otros CMS como Strapi. La configuración puede ser algo tediosa ya que aunque parezca que tienes mucha libertad de customización en realidad no la tienes.
+**Observaciones**: **Payload CMS** Si bien PayloadCMS está en constante mejora y desarrollo, es una solución relativamente nueva en comparación con otras alternativas más establecidas en el mercado. Hasta hace poco, carecía de integraciones oficiales con proveedores de servicios en la nube como AWS, Azure o Google Cloud, y no aceptaba plugins para crear drivers personalizados, lo que podría ser una limitación en ciertos casos de uso. Sin embargo, en las últimas versiones, se han agregado drivers oficiales para los principales proveedores de nube. Aunque su desarrollo sigue mejorando, la metodología es similar a `Next.js`, aunque este no ofrece las alternativas de configuración personalizada que ofrece `Next.js` en el caso de necesitarlas, es muy opinionado y me encontré que es mucho más limitado que otros CMS como Strapi. La configuración puede ser algo tediosa ya que aunque parezca que tienes mucha libertad de customización en realidad no la tienes.
 
 **Conclucion**: Creo que tiene mucho potencial si se va a utilizar en el servicio de hosting de Payload el cual viene con un gran premium en el precio. Pero para utilizar de forma personal o para desplegar en servidores propios recomiendo utilizar algunas de las alternativas más maduras del mercado.
 
